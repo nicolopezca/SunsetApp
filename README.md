@@ -1,2 +1,2 @@
 # SunsetApp
-Repo for the sunset app
+Develop branch to upload funcionalities
