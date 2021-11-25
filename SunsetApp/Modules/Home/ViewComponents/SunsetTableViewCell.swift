@@ -12,15 +12,15 @@ class SunsetTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        titleLabel.textAlignment = .center
+        hourLabel.textAlignment = .center
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        hourLabel.font = UIFont.systemFont(ofSize: 16)
     }
     
     func setViewModel(_ viewModel: SunsetTableViewModel) {
         self.titleLabel.text = viewModel.title
         self.hourLabel.text = viewModel.hour
     }
-
-    struct SunsetTableViewModel {
-        let title: String
-        let hour: String
-    }
+    
 }

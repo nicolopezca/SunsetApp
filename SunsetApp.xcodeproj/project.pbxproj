@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7F7A73AD274F8EFE00E153FC /* SunsetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73AB274F8EFE00E153FC /* SunsetTableViewCell.swift */; };
 		7F7A73AE274F8EFE00E153FC /* SunsetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F7A73AC274F8EFE00E153FC /* SunsetTableViewCell.xib */; };
+		7F7A73B0274F9A6B00E153FC /* SunsetTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73AF274F9A6B00E153FC /* SunsetTableViewModel.swift */; };
+		7F7A73B5274FB7F200E153FC /* TwilightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73B3274FB7F200E153FC /* TwilightTableViewCell.swift */; };
+		7F7A73B6274FB7F200E153FC /* TwilightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F7A73B4274FB7F200E153FC /* TwilightTableViewCell.xib */; };
 		BA1F13DC274E6222003036F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F13DB274E6222003036F1 /* AppDelegate.swift */; };
 		BA1F13DE274E6222003036F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F13DD274E6222003036F1 /* SceneDelegate.swift */; };
 		BA1F13E5274E6224003036F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1F13E4274E6224003036F1 /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 /* Begin PBXFileReference section */
 		7F7A73AB274F8EFE00E153FC /* SunsetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetTableViewCell.swift; sourceTree = "<group>"; };
 		7F7A73AC274F8EFE00E153FC /* SunsetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SunsetTableViewCell.xib; sourceTree = "<group>"; };
+		7F7A73AF274F9A6B00E153FC /* SunsetTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetTableViewModel.swift; sourceTree = "<group>"; };
+		7F7A73B3274FB7F200E153FC /* TwilightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwilightTableViewCell.swift; sourceTree = "<group>"; };
+		7F7A73B4274FB7F200E153FC /* TwilightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwilightTableViewCell.xib; sourceTree = "<group>"; };
 		BA1F13D8274E6222003036F1 /* SunsetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunsetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1F13DB274E6222003036F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA1F13DD274E6222003036F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +106,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F7A73B1274F9CD400E153FC /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				7F7A73AB274F8EFE00E153FC /* SunsetTableViewCell.swift */,
+				7F7A73AC274F8EFE00E153FC /* SunsetTableViewCell.xib */,
+				7F7A73B3274FB7F200E153FC /* TwilightTableViewCell.swift */,
+				7F7A73B4274FB7F200E153FC /* TwilightTableViewCell.xib */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		7F7A73B2274F9CE500E153FC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7F7A73AF274F9A6B00E153FC /* SunsetTableViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		BA1F13CF274E6221003036F1 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +207,8 @@
 		BA1F1414274E62CB003036F1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7F7A73B2274F9CE500E153FC /* ViewModels */,
+				7F7A73B1274F9CD400E153FC /* ViewComponents */,
 				BA1F1415274E62CB003036F1 /* Coordinator */,
 				BA1F1417274E62CB003036F1 /* Presenter */,
 				BA1F1419274E62CB003036F1 /* View */,
@@ -211,8 +238,6 @@
 			children = (
 				BA1F141A274E62CB003036F1 /* HomeViewController.xib */,
 				BA1F141B274E62CB003036F1 /* HomeViewController.swift */,
-				7F7A73AB274F8EFE00E153FC /* SunsetTableViewCell.swift */,
-				7F7A73AC274F8EFE00E153FC /* SunsetTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA1F13E8274E6224003036F1 /* LaunchScreen.storyboard in Resources */,
+				7F7A73B6274FB7F200E153FC /* TwilightTableViewCell.xib in Resources */,
 				BA1F142E274E62CB003036F1 /* BaseViewController.xib in Resources */,
 				BA1F13E5274E6224003036F1 /* Assets.xcassets in Resources */,
 				BA1F1428274E62CB003036F1 /* HomeViewController.xib in Resources */,
@@ -394,11 +420,13 @@
 			files = (
 				BA1F1427274E62CB003036F1 /* HomePresenter.swift in Sources */,
 				BA1F1411274E62BB003036F1 /* DependenciesContainer.swift in Sources */,
+				7F7A73B5274FB7F200E153FC /* TwilightTableViewCell.swift in Sources */,
 				BA1F1410274E62BB003036F1 /* DependenciesKey.swift in Sources */,
 				BA1F1429274E62CB003036F1 /* HomeViewController.swift in Sources */,
 				BA1F1412274E62BB003036F1 /* Coordinator.swift in Sources */,
 				BA1F142D274E62CB003036F1 /* BaseViewController.swift in Sources */,
 				BA1F142B274E62CB003036F1 /* BaseCoordinator.swift in Sources */,
+				7F7A73B0274F9A6B00E153FC /* SunsetTableViewModel.swift in Sources */,
 				7F7A73AD274F8EFE00E153FC /* SunsetTableViewCell.swift in Sources */,
 				BA1F13DC274E6222003036F1 /* AppDelegate.swift in Sources */,
 				BA1F142A274E62CB003036F1 /* HomeInteractor.swift in Sources */,
