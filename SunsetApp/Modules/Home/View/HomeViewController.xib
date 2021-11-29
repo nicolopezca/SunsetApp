@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="SunsetApp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="Il8-RP-ejZ" id="Mp4-rg-psW"/>
                 <outlet property="view" destination="iN0-l3-epB" id="8s1-tx-ubc"/>
             </connections>
         </placeholder>
@@ -17,9 +18,21 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Il8-RP-ejZ">
+                    <rect key="frame" x="0.0" y="60" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="87" y="127"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Il8-RP-ejZ" secondAttribute="trailing" id="QfB-y2-ENZ"/>
+                <constraint firstItem="Il8-RP-ejZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XdB-Ma-nwL"/>
+                <constraint firstItem="Il8-RP-ejZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="spZ-mr-wwr"/>
+                <constraint firstItem="Il8-RP-ejZ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" constant="16" id="zr8-ob-IEC"/>
+            </constraints>
+            <point key="canvasLocation" x="-383" y="120"/>
         </view>
     </objects>
     <resources>

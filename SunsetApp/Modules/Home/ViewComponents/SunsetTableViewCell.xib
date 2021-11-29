@@ -7,12 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SunsetTableViewCell" customModule="SunsetApp" customModuleProvider="target">
-            <connections>
-                <outlet property="hourLabel" destination="NsM-d9-Kw8" id="Kyc-Cx-bns"/>
-                <outlet property="titleLabel" destination="6e9-4X-5qX" id="1gm-KB-hRN"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SunsetTableViewCell" customModule="SunsetApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="SunsetTableViewCell" customModule="SunsetApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="400" height="120"/>
@@ -31,15 +26,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NsM-d9-Kw8">
-                                <rect key="frame" x="0.0" y="60.5" width="368" height="43.5"/>
+                                <rect key="frame" x="0.0" y="51.5" width="368" height="52.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="NsM-d9-Kw8" firstAttribute="centerY" secondItem="ny4-nR-OUl" secondAttribute="centerY" id="Nim-Zd-9vL"/>
-                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -50,6 +42,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="hourLabel" destination="NsM-d9-Kw8" id="gjc-iV-qGO"/>
+                <outlet property="titleLabel" destination="6e9-4X-5qX" id="v0n-IU-LWI"/>
+            </connections>
             <point key="canvasLocation" x="-349" y="-116"/>
         </tableViewCell>
     </objects>

@@ -9,13 +9,13 @@ import UIKit
 class SunsetTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var hourLabel: UILabel!
+    static let cellReuseIdentifier = "SunsetTableViewCell"
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel.textAlignment = .center
-        hourLabel.textAlignment = .center
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        hourLabel.font = UIFont.systemFont(ofSize: 16)
+        setStyleTitle()
+        setStyleHour()
     }
     
     func setViewModel(_ viewModel: SunsetTableViewModel) {
@@ -23,4 +23,13 @@ class SunsetTableViewCell: UITableViewCell {
         self.hourLabel.text = viewModel.hour
     }
     
+    private func setStyleTitle() {
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+    }
+    
+    private func setStyleHour() {
+        hourLabel.textAlignment = .center
+        hourLabel.font = UIFont.systemFont(ofSize: 16)
+    }
 }
