@@ -31,7 +31,6 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         let nib = UINib(nibName: "SunsetTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: SunsetTableViewCell.cellReuseIdentifier)
-//        self.tableView.register(SunsetTableViewCell.self, forCellReuseIdentifier: SunsetTableViewCell.cellReuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         createMockViewModels()
