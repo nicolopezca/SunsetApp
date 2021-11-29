@@ -34,6 +34,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.delegate = self
         tableView.dataSource = self
         createMockViewModels()
+//        peticion
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,15 +50,32 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
 
 private extension HomeViewController {
     func createMockViewModels() {
-        let date = Date()
-        let mockViewModel1 = SunsetTableViewModel(title: "titulo1", hour: "hora1")
-        let mockViewModel2 = SunsetTableViewModel(title: "titulo2", hour: "hora2")
-        let mockViewModel3 = SunsetTableViewModel(title: "titulo3", hour: "hora3")
-        let mockViewModel4 = SunsetTableViewModel(title: "titulo4", hour: "hora4")
+        let dateSun = getHourSun()
+        let dateTwilight = getHourTwilight()
+        let mockViewModel1 = SunsetTableViewModel(title: "Salida de sol", hour: dateSun)
+        let mockViewModel2 = SunsetTableViewModel(title: "Puesta de sol", hour: dateSun)
+        let mockViewModel3 = SunsetTableViewModel(title: "Duración del crepúsculo civil", hour: "\(dateTwilight) horas")
+        let mockViewModel4 = SunsetTableViewModel(title: "Duración del crepúsculo náutico", hour: "\(dateTwilight) horas")
         viewModels.append(mockViewModel1)
         viewModels.append(mockViewModel2)
         viewModels.append(mockViewModel3)
         viewModels.append(mockViewModel4)
+    }
+    
+    func getHourSun() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let dateSun = formatter.string(from: date)
+        return dateSun
+    }
+    
+    func getHourTwilight() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH"
+        let dateTwilight = formatter.string(from: date)
+        return dateTwilight
     }
 }
 

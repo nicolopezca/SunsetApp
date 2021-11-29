@@ -26,6 +26,7 @@ class SunsetTableViewCell: UITableViewCell {
     private func setStyleTitle() {
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.numberOfLines = 0
     }
     
     private func setStyleHour() {
