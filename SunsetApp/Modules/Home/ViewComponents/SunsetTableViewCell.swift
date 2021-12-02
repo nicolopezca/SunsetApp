@@ -10,7 +10,6 @@ class SunsetTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var hourLabel: UILabel!
     static let cellReuseIdentifier = "SunsetTableViewCell"
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,14 +21,17 @@ class SunsetTableViewCell: UITableViewCell {
         self.titleLabel.text = viewModel.title
         self.hourLabel.text = viewModel.hour
     }
+}
+
+private extension SunsetTableViewCell {
     
-    private func setStyleTitle() {
+    func setStyleTitle() {
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.numberOfLines = 0
     }
     
-    private func setStyleHour() {
+    func setStyleHour() {
         hourLabel.textAlignment = .center
         hourLabel.font = UIFont.systemFont(ofSize: 16)
     }

@@ -12,7 +12,7 @@ protocol HomeView: AnyObject {
 }
 
 final class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     var presenter: HomePresenterProtocol
     var viewModels: [SunsetTableViewModel] = []
     
@@ -29,12 +29,35 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "SunsetTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: SunsetTableViewCell.cellReuseIdentifier)
-        tableView.delegate = self
-        tableView.dataSource = self
+        setupTable()
         createMockViewModels()
-//        peticion
+        
+        
+        let urlSessionConfiguration = URLSessionConfiguration.default
+        let urlSession = URLSession(configuration: urlSessionConfiguration)
+        let url = URL(string: "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today")
+        urlSession.dataTask(with: url!) { data, response, error in
+            if error != nil || data == nil {
+                print("Client error!")
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                print("Server error!")
+                return
+            }
+            
+            guard let mime = response.mimeType, mime == "application/json" else {
+                print("Wrong MIME type!")
+                return
+            }
+            do {
+               let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                print(json)
+            } catch {
+                print("JSON error: \(error.localizedDescription)")
+            }
+        }.resume()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,6 +99,13 @@ private extension HomeViewController {
         formatter.dateFormat = "HH"
         let dateTwilight = formatter.string(from: date)
         return dateTwilight
+    }
+    
+    func setupTable() {
+        let nib = UINib(nibName: "SunsetTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: SunsetTableViewCell.cellReuseIdentifier)
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
