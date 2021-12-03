@@ -10,8 +10,8 @@
 		7F7A73AD274F8EFE00E153FC /* SunsetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73AB274F8EFE00E153FC /* SunsetTableViewCell.swift */; };
 		7F7A73AE274F8EFE00E153FC /* SunsetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F7A73AC274F8EFE00E153FC /* SunsetTableViewCell.xib */; };
 		7F7A73B0274F9A6B00E153FC /* SunsetTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73AF274F9A6B00E153FC /* SunsetTableViewModel.swift */; };
-		7F7A73B927579E8C00E153FC /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73B827579E8C00E153FC /* Petition.swift */; };
-		7F7A73BB2757A5B600E153FC /* Petitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73BA2757A5B600E153FC /* Petitions.swift */; };
+		7F7A73B927579E8C00E153FC /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73B827579E8C00E153FC /* Results.swift */; };
+		7F7A73BB2757A5B600E153FC /* SunsetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7A73BA2757A5B600E153FC /* SunsetResponse.swift */; };
 		BA1F13DC274E6222003036F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F13DB274E6222003036F1 /* AppDelegate.swift */; };
 		BA1F13DE274E6222003036F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1F13DD274E6222003036F1 /* SceneDelegate.swift */; };
 		BA1F13E5274E6224003036F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1F13E4274E6224003036F1 /* Assets.xcassets */; };
@@ -53,8 +53,8 @@
 		7F7A73AB274F8EFE00E153FC /* SunsetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetTableViewCell.swift; sourceTree = "<group>"; };
 		7F7A73AC274F8EFE00E153FC /* SunsetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SunsetTableViewCell.xib; sourceTree = "<group>"; };
 		7F7A73AF274F9A6B00E153FC /* SunsetTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetTableViewModel.swift; sourceTree = "<group>"; };
-		7F7A73B827579E8C00E153FC /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
-		7F7A73BA2757A5B600E153FC /* Petitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petitions.swift; sourceTree = "<group>"; };
+		7F7A73B827579E8C00E153FC /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		7F7A73BA2757A5B600E153FC /* SunsetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SunsetResponse.swift; sourceTree = "<group>"; };
 		BA1F13D8274E6222003036F1 /* SunsetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunsetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1F13DB274E6222003036F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA1F13DD274E6222003036F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 		7F7A73B727579E7A00E153FC /* Petition */ = {
 			isa = PBXGroup;
 			children = (
-				7F7A73B827579E8C00E153FC /* Petition.swift */,
-				7F7A73BA2757A5B600E153FC /* Petitions.swift */,
+				7F7A73B827579E8C00E153FC /* Results.swift */,
+				7F7A73BA2757A5B600E153FC /* SunsetResponse.swift */,
 			);
 			path = Petition;
 			sourceTree = "<group>";
@@ -430,11 +430,11 @@
 				BA1F1410274E62BB003036F1 /* DependenciesKey.swift in Sources */,
 				BA1F1429274E62CB003036F1 /* HomeViewController.swift in Sources */,
 				BA1F1412274E62BB003036F1 /* Coordinator.swift in Sources */,
-				7F7A73B927579E8C00E153FC /* Petition.swift in Sources */,
+				7F7A73B927579E8C00E153FC /* Results.swift in Sources */,
 				BA1F142D274E62CB003036F1 /* BaseViewController.swift in Sources */,
 				BA1F142B274E62CB003036F1 /* BaseCoordinator.swift in Sources */,
 				7F7A73B0274F9A6B00E153FC /* SunsetTableViewModel.swift in Sources */,
-				7F7A73BB2757A5B600E153FC /* Petitions.swift in Sources */,
+				7F7A73BB2757A5B600E153FC /* SunsetResponse.swift in Sources */,
 				7F7A73AD274F8EFE00E153FC /* SunsetTableViewCell.swift in Sources */,
 				BA1F13DC274E6222003036F1 /* AppDelegate.swift in Sources */,
 				BA1F142A274E62CB003036F1 /* HomeInteractor.swift in Sources */,

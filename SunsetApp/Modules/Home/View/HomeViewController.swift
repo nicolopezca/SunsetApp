@@ -30,9 +30,27 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
-        createMockViewModels()
-        
-        
+        getSunsetInfo { results in
+            if let sunrise = results?.sunrise {
+                self.viewModels.append(SunsetTableViewModel(title: "sunrise", hour: sunrise))
+            }
+            if let sunset = results?.sunset {
+                self.viewModels.append(SunsetTableViewModel(title: "sunset", hour: sunset))
+            }
+            if let civil_twilight_begin = results?.civil_twilight_begin {
+                self.viewModels.append(SunsetTableViewModel(title: "civil_twilight_begin", hour: civil_twilight_begin))
+            }
+            if let civil_twilight_end = results?.civil_twilight_end {
+                self.viewModels.append(SunsetTableViewModel(title: "civil_twilight_end", hour: civil_twilight_end))
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    func getSunsetInfo(completion: @escaping (((Results?) -> Void))) {
         let urlSessionConfiguration = URLSessionConfiguration.default
         let urlSession = URLSession(configuration: urlSessionConfiguration)
         let url = URL(string: "https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today")
@@ -51,11 +69,9 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
                 print("Wrong MIME type!")
                 return
             }
-            do {
-               let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print(json)
-            } catch {
-                print("JSON error: \(error.localizedDescription)")
+            
+            if let jsonPetitions = try? JSONDecoder().decode(SunsetReponse.self, from: data!) {
+                completion(jsonPetitions.results)
             }
         }.resume()
     }
@@ -72,19 +88,7 @@ final class HomeViewController: UIViewController, UITableViewDelegate, UITableVi
 }
 
 private extension HomeViewController {
-    func createMockViewModels() {
-        let dateSun = getHourSun()
-        let dateTwilight = getHourTwilight()
-        let mockViewModel1 = SunsetTableViewModel(title: "Salida de sol", hour: dateSun)
-        let mockViewModel2 = SunsetTableViewModel(title: "Puesta de sol", hour: dateSun)
-        let mockViewModel3 = SunsetTableViewModel(title: "Duración del crepúsculo civil", hour: "\(dateTwilight) horas")
-        let mockViewModel4 = SunsetTableViewModel(title: "Duración del crepúsculo náutico", hour: "\(dateTwilight) horas")
-        viewModels.append(mockViewModel1)
-        viewModels.append(mockViewModel2)
-        viewModels.append(mockViewModel3)
-        viewModels.append(mockViewModel4)
-    }
-    
+  
     func getHourSun() -> String {
         let date = Date()
         let formatter = DateFormatter()

@@ -6,6 +6,8 @@
 //
 
 import Foundation
-struct Petitions: Decodable {
-    var results: [Results]
+
+struct SunsetReponse: Decodable {
+    var results: Results
+    var status: String
 }
