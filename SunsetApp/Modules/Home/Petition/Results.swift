@@ -8,14 +8,17 @@
 import Foundation
 
 struct Results: Decodable {
-//    var astronomical_twilight_begin: String?
-//    var astronomical_twilight_end: String?
-    var civil_twilight_begin: String?
-    var civil_twilight_end: String?
-//    var day_length: String?
-    var nautical_twilight_begin: String?
-    var nautical_twilight_end: String?
-//    var solar_noon: String?
-    var sunrise: String?
-    var sunset: String?
+    enum CodingKeys: String, CodingKey {
+        case civilTwilightBegin = "civil_twilight_begin"
+        case civilTwilightEnd = "civil_twilight_end"
+        case nauticalTwilightBegin = "nautical_twilight_begin"
+        case nauticalTwilightEnd = "nautical_twilight_end"
+        case sunrise, sunset
+    }
+    let civilTwilightBegin: String?
+    let civilTwilightEnd: String?
+    let nauticalTwilightBegin: String?
+    let nauticalTwilightEnd: String?
+    let sunrise: String?
+    let sunset: String?
 }
